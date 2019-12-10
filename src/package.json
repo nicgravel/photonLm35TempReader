@@ -1,0 +1,15 @@
+{
+  "name": "photongettemp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "photonGetTemp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nicgravel@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "mysql": "^2.17.1"
+  }
+}

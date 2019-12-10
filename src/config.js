@@ -2,8 +2,8 @@ const serverHost = 'localhost';
 const serverDbHost = serverHost;
 
 module.exports = {
-    url: '',
-    token: '',
+    url: process.env.PHOTON_URL,
+    token: process.env.PHOTON_TOKEN,
     interval: 30,
 	mysql: {
 		connection: {

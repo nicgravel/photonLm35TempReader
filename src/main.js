@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const Axios = require('axios');
 const config = require('./config');
 const mysql = require('mysql');

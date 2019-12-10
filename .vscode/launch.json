@@ -12,6 +12,7 @@
                 "<node_internals>/**",
                 "${workspaceFolder}/src/node_modules/**/*.js"
             ],
+            "cwd": "${workspaceRoot}/src",
             "program": "${workspaceFolder}\\src\\main.js"
         }
     ]

@@ -22,19 +22,18 @@ async function main() {
 
 async function timedCheckTemp() {
     const curTemp = await getTemp();
-    (curTemp) ? saveTempInDb(curTemp) : console.log("No value received");
+    (curTemp) ? saveTempInDb(curTemp) : logMe("No value received");
     setTimeout(timedCheckTemp, interval)
 }
 
 async function getTemp() {
     try {
         const curTemp = await Axios.get(config.url, { headers: { 'Authorization': "Bearer " + config.token } })
-        const date = new Date();
         const result = roundValue(curTemp.data.result);
-        console.log(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()} => ${result}`);
+        logMe(result);
         return result;
     } catch (err) {
-        console.log(err);
+        logMe(err.message);
         return null;
     }
 }
@@ -56,4 +55,9 @@ function roundValue(temp, roundToPoint5 = false) {
         return y - (y % (+0.5));
     }
     return parseFloat(temp).toFixed(1);
+}
+
+function logMe(data) {
+    const date = new Date();
+    console.log(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()} => ${data}`);
 }

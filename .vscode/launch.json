@@ -13,7 +13,10 @@
                 "${workspaceFolder}/src/node_modules/**/*.js"
             ],
             "cwd": "${workspaceRoot}/src",
-            "program": "${workspaceFolder}\\src\\main.js"
+            "program": "${workspaceFolder}\\src\\main.js",
+            // "args": [
+            //     "40"
+            // ],
         }
     ]
 }
